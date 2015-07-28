@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        #chessBoard {padding:10px; position: absolute; top: 79px; left: 389px;
+     margin: 0px; display: block; width: 403px; height: 403px; z-index: 6; }
+
+        #div1 {padding:10px;border:2px solid #aaaaaa; position: absolute; top: 79px; left: 389px;
+     margin: 10px; display: block; width: 403px; height: 403px; z-index: 7; }
+    </style>
+
+    <title>Wonderfull Chess</title>
+    <meta charset="UTF-8" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+   
+    
+    <script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    //function drag(ev) {
+    //    ev.dataTransfer.setData("image", ev.target.id);
+    //}
+
+    //function drop(ev) {
+    //    ev.preventDefault();
+    //    var data = ev.dataTransfer.getData("image");
+    //    ev.target.appendTo(document.getElementById(data));
+       
+    //} 
+    </script>
+
+
+</head>
+<body bgcolor="green">
+
+    Welcome to the wonderfull chess game!
+    <p></p>
+    <div id="chessBoard">
+
+        <canvas id="chessCanvas"></canvas>
+    </div>
+
+    <div id="div1" ondrop="drop(event)" >
+
+        <img id="wR2" src="~/Images/wRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 350px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wR" src="~/Images/wRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 0px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wN" src="~/Images/wKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 50px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wN2" src="~/Images/wKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position:  absolute; top: 350px; left: 300px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wB2" src="~/Images/wBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 250px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wB" src="~/Images/wBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 100px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wK" src="~/Images/wKing.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 200px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wQ" src="~/Images/wQueen.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 150px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+
+        <img id="bR" src="~/Images/bRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 350px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bR2" src="~/Images/bRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 0px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bN" src="~/Images/bKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 50px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bN2" src="~/Images/bKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left:300px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bB" src="~/Images/bBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 100px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bB2" src="~/Images/bBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 250px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bK" src="~/Images/bKing.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 200px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bQ" src="~/Images/bQueen.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 150px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+
+        <img id="bp8" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 350px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bp7" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 300px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bp6" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 250px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bp5" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 200px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bp4" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 150px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bp3" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 100px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bp2" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 50px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="bp" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 0px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+
+        <img id="wp" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 0px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wp2" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 50px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wp3" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 100px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wp4" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 150px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wp5" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 200px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wp6" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 250px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wp7" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 300px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+        <img id="wp8" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 350px;
+     margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
+
+    </div>
+    
+   
+
+</body>
+</html>
+
+@*<asp:HiddenField ID="hdnfldVariable" runat="server" />*@
+
+<script>
+    //var draggable = document.getElementById("wq");
+
+    //draggable.addEventListener('dragstart', dragStart, false);
+    //draggable.addEventListener('dragend', drop, false);
+
+    //var droptarget = document.getElementById("droptarget1");
+
+    function dragStart(event) {
+
+        id = event.target.id; 
+        event.dataTransfer.setData(id, "am mutat");
+        event.target.style.border = "1px solid #3333ee";
+        
+    }
+
+    function drop(event) {
+
+        cList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        event.preventDefault();
+
+        id = event.target.id;
+        var data = event.dataTransfer.getData(id);
+        event.target.style.border = "none";
+        
+        x = event.pageX - 389;
+        y = event.pageY - 79;
+
+        xt = Math.floor(x / 50) + 1;  // x trebuie sa fie litera
+        yt = Math.floor(y / 50);  // y - cifra
+
+        for (i = 1; i < 9; i++) {
+            if (xt > 7) {
+                xt = 'h';
+            }else if (xt === i) {
+                xt = cList[i-1];
+            }
+        }
+
+        for (i = 0; i < 8; i++) {
+            if (yt === i) {
+                yt = 8 - i;
+                break;
+            }
+        }
+              
+        //alert(id+' '+ xt + yt + ' ' + x + ' ' +y);
+        makemove(id, xt, yt);        
+        return false;
+    }
+
+    function makemove(id, xt, yt){
+
+        alert ('suntem in makemove si vrem sa mutam '+ id +' la ' + xt+' '+yt)
+        cList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+        var ix = 0;
+        var iy = 0;
+
+        //y-no to position
+        for (i = 1; i < 9; i++) {
+            ok = false;
+            if (yt === 9-i) {
+                yt = iy;
+                ok = true;
+            } else {
+                iy += 50;
+            }
+            
+            if (ok) { break; }
+            
+        }
+
+        //x-character to number
+        for (i = 0; i < 8; i++) {
+            if (xt === cList[i]) {
+                xt = i + 1;
+                break;
+            }
+        }
+        //x-no to position
+        for (i = 1; i < 9; i++) {
+            ok = false;
+            if (xt === i) {
+                xt = ix;
+                ok = true;
+            } else {
+                ix+= 50;
+            }
+            if (ok) { break; }
+        }
+
+        ob = document.getElementById(id);
+        //alert(xt+' ' + yt);
+        ob.style.top = yt + 'px';
+        ob.style.left = xt + 'px';
+
+        var deTrimis = document.getElementById(id);
+        deTrimis.value = id + ' ' + xt + ' ' + yt;
+    }
+
+    
+</script>
+
+<script>
+    var chess={
+        ctx: null,
+        width: 402,
+        height: 402,
+        white: "#fff",
+        green: "#166716",
+        black: "#000000",
+        squareWidth: 0,
+        squareHeight: 0,
+        graphDiv: "chessCanvas",
+        numList: [1,2,3,4,5,6,7,8],
+        letterList: ['a','b','c','d','e','f','g','h'],
+
+        initValues: function(){
+            this.squareWidth = (this.width-2) / 8;
+            this.squareHeight = (this.height-2) / 8;
+        },
+
+        resetBackground: function(){
+            this.ctx.canvas.width = this.width;
+            this.ctx.canvas.height = this.height;
+            this.ctx.fillStyle = this.green;
+            this.ctx.fillRect(0, 0, this.width, this.height);
+        },
+
+        drawSquare: function(x, y){
+            this.ctx.fillRect(x, y, this.squareWidth, this.squareHeight)
+        },
+
+        gradient: function (color) {
+            var gradient = this.ctx.createLinearGradient(0, 0, 0, this.squareHeight);
+            gradient.addColorStop(1, color);
+            gradient.addColorStop(1, "#ffffff");
+            this.ctx.fillStyle = gradient;
+        },
+
+        drawGrid: function(){
+            var x = 0;
+            var y = 0;
+            var startPointL = 40;
+            var startPointN = 365;
+            this.ctx.font = "bold 15px Comic Sans ";
+
+                for (var row = 0; row < 8; row++) {
+                    for (var column = 0; column < 8; column++) {
+                        this.gradient(((row + column) % 2 === 0) ? this.white : this.green);
+                        this.drawSquare(1 + (row * this.squareWidth), 1 + (column * this.squareHeight));
+                       
+                    }
+                    if (row % 2 == 1) {
+                        this.ctx.fillStyle = '#166716';
+                    } else {
+                        this.ctx.fillStyle = '#ffffff';      
+                    }
+
+                    this.ctx.fillText(this.letterList[row], startPointL, 397);
+                    this.ctx.fillText(this.numList[row], 4, startPointN);
+                    startPointL += 50;
+                    startPointN -= 50;                  
+                }
+       
+          
+        },
+
+        //startPosition: function(){
+        //    var img = document.getElementById("wr");
+        //    this.ctx.drawImage(img, 4, 357, 40, 40);
+        //    this.ctx.drawImage(img, 357, 357, 40, 40);
+
+        //},
+
+        drawBoard: function(){
+            this.resetBackground();
+        },
+        initCanvas: function(){
+            //var s = "#" + this.graphDiv;
+            var canvas = $('#chessCanvas').get(0);
+            canvas.width = this.width;
+            canvas.height = this.height;
+            this.ctx = canvas.getContext('2d');
+            //this.ctx = $('<canvas />', { width: this.width, height: this.height }).appendTo(s)[0].getContext('2d');
+        },
+    };
+    $(document).ready(function(){
+        chess.initCanvas();
+        chess.initValues();
+        chess.drawBoard();
+        chess.drawGrid();
+       
+        //chess.startPosition();
+    });
+</script>
