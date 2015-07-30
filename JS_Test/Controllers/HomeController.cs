@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JS_Test.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,5 +15,6 @@ namespace JS_Test.Controllers
 
             return View();
         }
+
     }
 }

@@ -4,13 +4,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 
 namespace JS_Test.Controllers
 {
     public class ValuesController : ApiController
     {
 
-       
+        public void Primire(int yt, int xt)
+        {
+
+
+
+        }
         // GET api/values
         public IEnumerable<string> Get()
         {

@@ -37,6 +37,15 @@
 <body bgcolor="green">
 
     Welcome to the wonderfull chess game!
+    <button id="waitButton">
+        I`m waiting
+    </button>
+    <button id="moveButton">
+        I`m moving
+    </button>
+    <div style="border:2px solid">
+
+    </div>
     <p></p>
     <div id="chessBoard">
 
@@ -47,36 +56,36 @@
 
         <img id="wR2" src="~/Images/wRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 350px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="wR" src="~/Images/wRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 0px;
+        <img id="wR1" src="~/Images/wRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 0px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="wN" src="~/Images/wKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 50px;
+        <img id="wN1" src="~/Images/wKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 50px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
         <img id="wN2" src="~/Images/wKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position:  absolute; top: 350px; left: 300px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
         <img id="wB2" src="~/Images/wBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 250px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="wB" src="~/Images/wBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 100px;
+        <img id="wB1" src="~/Images/wBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 100px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="wK" src="~/Images/wKing.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 200px;
+        <img id="wK1" src="~/Images/wKing.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 200px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="wQ" src="~/Images/wQueen.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 150px;
+        <img id="wQ1" src="~/Images/wQueen.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 350px; left: 150px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
 
-        <img id="bR" src="~/Images/bRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 350px;
+        <img id="bR1" src="~/Images/bRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 350px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
         <img id="bR2" src="~/Images/bRook.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 0px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="bN" src="~/Images/bKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 50px;
+        <img id="bN1" src="~/Images/bKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 50px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
         <img id="bN2" src="~/Images/bKnight.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left:300px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="bB" src="~/Images/bBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 100px;
+        <img id="bB1" src="~/Images/bBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 100px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
         <img id="bB2" src="~/Images/bBishop.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 250px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="bK" src="~/Images/bKing.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 200px;
+        <img id="bK1" src="~/Images/bKing.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 200px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="bQ" src="~/Images/bQueen.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 150px;
+        <img id="bQ1" src="~/Images/bQueen.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 0px; left: 150px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
 
         <img id="bp8" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 350px;
@@ -93,10 +102,10 @@
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
         <img id="bp2" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 50px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
-        <img id="bp" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 0px;
+        <img id="bp1" src="~/Images/bPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 50px; left: 0px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
 
-        <img id="wp" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 0px;
+        <img id="wp1" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 0px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
         <img id="wp2" src="~/Images/wPawn.png" width="40" height="40" draggable="true" ondragstart="dragStart(event)" ondragend="drop(event)" style="position: absolute; top: 300px; left: 50px;
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
@@ -114,7 +123,7 @@
      margin: 0px; padding: 0px; display: block; width: 45px; height: 45px; z-index: 6; ">
 
     </div>
-    
+
    
 
 </body>
@@ -123,6 +132,9 @@
 @*<asp:HiddenField ID="hdnfldVariable" runat="server" />*@
 
 <script>
+    var mutari='';
+    var ok1 = true;
+    var isPlayerWaiting = false;
     //var draggable = document.getElementById("wq");
 
     //draggable.addEventListener('dragstart', dragStart, false);
@@ -130,12 +142,52 @@
 
     //var droptarget = document.getElementById("droptarget1");
 
+    $("#waitButton").click(function () {
+        isPlayerWaiting = true;
+        alert(isPlayerWaiting);
+    });
+
+    $("#moveButton").click(function () {
+        isPlayerWaiting = false;
+        alert(isPlayerWaiting);
+    });
+
     function dragStart(event) {
 
-        id = event.target.id; 
+        //waiting
+        if (isPlayerWaiting) {
+            alert("mesaj")
+            event.preventDefault();
+            setTimeout(function () {
+                $.ajax({
+                    type: "get",
+                    url: "@Url.HttpRouteUrl("DefaultApi", new {controller = "Game",id="4"})",
+                    
+                    success: function (game) {
+                       
+                        //To do: reconstituie tabla 
+                        //moveList = game.MoveList;
+                        
+                        alert(game.moveList);
+                       
+                    alert("get success!");
+                },
+                error: function (result) {
+
+                    alert(result.status);
+                }
+            });
+
+
+                //alert("Hello");
+            }, 2000);
+            return false;
+        }
+
+        id = event.target.id;
         event.dataTransfer.setData(id, "am mutat");
         event.target.style.border = "1px solid #3333ee";
-        
+
     }
 
     function drop(event) {
@@ -146,7 +198,7 @@
         id = event.target.id;
         var data = event.dataTransfer.getData(id);
         event.target.style.border = "none";
-        
+
         x = event.pageX - 389;
         y = event.pageY - 79;
 
@@ -167,20 +219,53 @@
                 break;
             }
         }
-              
+
+        var newGame = { WhitePlayerId: 1, BlackPlayerId: 2 };
+        var newGameAsString = JSON.stringify(newGame);
+
+        //this is how to create a game - for new game
+        if (ok1) {
+            $.ajax({
+                type: "POST",
+                url: "@Url.HttpRouteUrl("DefaultApi", new {controller = "Game"})",
+                data: "=" + newGameAsString,
+                success: function (newGameUri) {
+                    //game id should be returned here
+
+                    console.log("param:" + newGameUri);
+
+                    //todo: redirect to the game page (which will contain the new game id)
+                },
+                error: function (result) {
+
+                    alert(result.status);
+                }
+            });
+            ok1 = false;
+        }
+    //Q:cum obtii id-ul jocului in javascript?
+    // trimiti id-ul ca si rezultat la post
+
+        var cod = id + xt + yt;
         //alert(id+' '+ xt + yt + ' ' + x + ' ' +y);
-        makemove(id, xt, yt);        
+        makemove(cod);
         return false;
     }
 
-    function makemove(id, xt, yt){
+    function makemove(cod){
+        id = cod.substring(0,3);
+        xt = cod.substring(3, 4);
+        yt = parseInt(cod[4]);
 
+        console.log(id, xt, yt);
+        x = xt;
+        y = yt;
         alert ('suntem in makemove si vrem sa mutam '+ id +' la ' + xt+' '+yt)
         cList = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
         var ix = 0;
         var iy = 0;
 
-        //y-no to position
+        //y-number to position
         for (i = 1; i < 9; i++) {
             ok = false;
             if (yt === 9-i) {
@@ -189,9 +274,9 @@
             } else {
                 iy += 50;
             }
-            
+
             if (ok) { break; }
-            
+
         }
 
         //x-character to number
@@ -201,7 +286,7 @@
                 break;
             }
         }
-        //x-no to position
+        //x-number to position
         for (i = 1; i < 9; i++) {
             ok = false;
             if (xt === i) {
@@ -215,14 +300,47 @@
 
         ob = document.getElementById(id);
         //alert(xt+' ' + yt);
+                
+        //Q:cum obtii id-ul jocului in javascript?
+        // trimiti id-ul ca si rezultat la post
+
         ob.style.top = yt + 'px';
         ob.style.left = xt + 'px';
 
         var deTrimis = document.getElementById(id);
         deTrimis.value = id + ' ' + xt + ' ' + yt;
+
+        //var listaMutari = ob + yt + xt;
+
+        //nu adaugam virgula atunci cand nu exista mutari; daca stringul e empty, se evalueaza la false
+        if (mutari) {
+            mutari += ',';
+        }
+        mutari = mutari + id + x + y;
+        var lista = { MoveList: mutari+' '};
+
+        var listaTrimisa = JSON.stringify(lista);
+        //this is how to update a game
+        $.ajax({
+            type: "put",
+            url: "@Url.HttpRouteUrl("DefaultApi", new {controller = "Game",id="3"})",
+            data: "=" + listaTrimisa,
+        datatype: "text",
+        success: function () {
+            alert("put success!");
+        },
+        error: function (result) {
+
+            alert(result.status);
+        }
+    });
+
+
+
+
     }
 
-    
+
 </script>
 
 <script>
